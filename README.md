@@ -54,7 +54,32 @@ Django REST API for restaurant menu and booking management with user authenticat
 
 #### Restaurant API
 - `GET/POST /restaurant/menu/` - Menu items (CRUD)
-- `GET/POST /restaurant/booking/tables/` - Table bookings (CRUD)
+- `GET/POST /restaurant/booking/tables/` - Table bookings (CRUD) **[Requires Authentication]**
+
+#### Token Authentication
+
+**Get Token:**
+```bash
+POST /restaurant/api-token-auth/
+Content-Type: application/json
+
+{
+  "username": "your_username",
+  "password": "your_password"
+}
+
+# Response: {"token": "your_auth_token_here"}
+```
+
+**Use Token for Secured Endpoints:**
+```bash
+GET /restaurant/booking/tables/
+Authorization: Token your_auth_token_here
+```
+
+**Error Responses:**
+- Without token: `{"detail": "Authentication credentials were not provided."}`
+- Invalid token: `{"detail": "Invalid token."}`
 
 ### Development Setup
 ```bash
