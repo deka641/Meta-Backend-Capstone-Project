@@ -9,6 +9,6 @@ router.register(r'booking/tables', views.BookingViewSet)
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('api-token-auth/', obtain_auth_token),
+    path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
     path('', include(router.urls)),
 ]

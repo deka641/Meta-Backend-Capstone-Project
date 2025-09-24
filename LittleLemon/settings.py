@@ -76,6 +76,7 @@ WSGI_APPLICATION = 'LittleLemon.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+import sys
 
 DATABASES = {
     'default': {
@@ -90,6 +91,13 @@ DATABASES = {
         },
     }
 }
+
+# Use SQLite for testing to avoid permission issues
+if 'test' in sys.argv:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': ':memory:'
+    }
 
 
 # Password validation
