@@ -33,59 +33,28 @@ Please test the following API endpoints:
 ## Example Payloads
 
 ### User Registration:
-```json
 {
   "username": "testuser",
   "password": "securepass123",
   "email": "test@example.com"
 }
-```
 
 ### Login:
-```json
 {
   "username": "testuser",
   "password": "securepass123"
 }
-```
 
 ### Menu Item:
-```json
 {
   "Title": "Greek Salad",
   "Price": "12.99",
   "Inventory": 30
 }
-```
 
 ### Booking:
-```json
 {
   "Name": "John Doe",
   "No_of_guests": 4,
   "BookingDate": "2024-12-25T18:00:00"
 }
-```
-
-## Tech Stack
-- Django 5.2.6
-- Django REST Framework
-- MySQL Database
-- Djoser Authentication
-
-## Development Setup
-```bash
-# Install dependencies
-pip install -r requirements.txt
-
-# Run migrations
-python manage.py migrate
-
-# Start development server
-python manage.py runserver 0.0.0.0:8000
-```
-
-## Admin Access
-- URL: http://localhost:8000/admin/
-- Username: admin
-- Password: admin123
